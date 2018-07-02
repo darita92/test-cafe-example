@@ -1,0 +1,30 @@
+{
+  "name": "test-cafe-example",
+  "version": "1.0.0",
+  "description": "Test Cafe automated browser tests",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.laureate.net:daniel-arita/test-cafe-example.git"
+  },
+  "keywords": [
+    "automated",
+    "tests",
+    "testcafe",
+    "browser",
+    "testing",
+    "javascript"
+  ],
+  "author": "Daniel Arita <daniel.arita@laureate.net>",
+  "license": "ISC",
+  "dependencies": {
+    "testcafe-reporter-xunit": "^2.1.0",
+    "xpath-to-css": "^1.0.2"
+  }
+}
