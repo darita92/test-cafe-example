@@ -71,6 +71,8 @@ The project has many `npm` commands ready to be used, just put `npm run <command
     4. -s screenshots
     5. -r spec,xunit:report.xml
 
+  For this to work you need to have `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY` on your environment variables.
+
 4. `test:ci`: runs tests in headless mode for chrome and firefox.
   - Flags:
     1. -e
