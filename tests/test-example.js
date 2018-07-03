@@ -7,11 +7,15 @@ const searchPage = new SearchPage();
 const resultPage = new ResultPage();
 
 fixture `Google Search`
-    .page `https://google.com`;
+    .page `https://google.com`
+    .afterEach(async t => {
+        //console.log(t);
+        //await t.takeScreenshot( 'screenshot-' + t.name + '.png' );
+    });
 
 test('Search for TestCafe', async t => {
     await t
         .typeText(searchPage.searchInput, 'testcafe')
         .click(searchPage.searchBtn)
-        .expect(resultPage.firstHeader.innerText).contains('GitHub');
+        .expect(resultPage.firstHeader.innerText).contains('Github');
 });
