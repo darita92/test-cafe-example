@@ -7,7 +7,11 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "testcafe chrome -e",
+    "test:screenshot": "testcafe chrome -e -S -s screenshots",
+    "test:bs": "cross-env BROWSERSTACK_USERNAME=elder.godoy@laureate.net npm run test:bs:2",
+    "test:bs:2": "cross-env BROWSERSTACK_ACCESS_KEY=hhWkbe4kuFSjpjTWSqsN testcafe 'browserstack:firefox@58.0:Windows 10' tests/*.js",
+    "test:ci": "testcafe \"chrome:headless\" -S -e -s screenshots -r xunit:report.xml"
   },
   "repository": {
     "type": "git",
@@ -26,5 +30,10 @@
   "dependencies": {
     "testcafe-reporter-xunit": "^2.1.0",
     "xpath-to-css": "^1.0.2"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "testcafe": "^0.20.4",
+    "testcafe-browser-provider-browserstack": "^1.5.0"
   }
 }
