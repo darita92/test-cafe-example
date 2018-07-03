@@ -7,12 +7,12 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "testcafe chrome -e --disable-page-reloads",
-    "test:screenshot": "testcafe chrome -e -S -s screenshots --disable-page-reloads",
+    "test": "testcafe \"chrome -incognito\" -e --disable-page-reloads",
+    "test:screenshot": "testcafe \"chrome -incognito\" -e -S -s screenshots --disable-page-reloads",
     "test:bs": "cross-env BROWSERSTACK_USERNAME=elder.godoy@laureate.net npm run test:bs:2",
     "test:bs:2": "cross-env BROWSERSTACK_ACCESS_KEY=hhWkbe4kuFSjpjTWSqsN testcafe 'browserstack:\"Samsung Galaxy S8\"' tests/*.js --disable-page-reloads -e -r spec,xunit:report.xml -S -s screenshots",
     "test:ci": "testcafe \"chrome:headless,firefox:headless\" -S -e -s screenshots -r spec,xunit:report.xml --disable-page-reloads",
-    "test:multiple": "testcafe \"chrome,firefox,ie,edge\" -e -S -s screenshots --disable-page-reloads"
+    "test:multiple": "testcafe \"chrome -incognito,firefox -private-window,ie,edge\" -e -S -s screenshots --disable-page-reloads"
   },
   "repository": {
     "type": "git",
