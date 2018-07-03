@@ -45,3 +45,43 @@ We use several options to run and validate tests that come with TestCafe:
 2. Screenshot Folder (-s \<path\>): this is used to specify wich folder the screenshot need to be saved.
 3. Skip JS Errors (-e): this enables tests no to fail if there is a JS error on the console.
 4. Reporter (-r \<reporter\>): used to specify wich type of reporter to use and the output.
+5. Disable Page Reloads (--disable-page-reloads): this prevents testcafe from refreshing the whole app for every test and keep session alive. 
+
+## Project commands
+
+The project has many `npm` commands ready to be used, just put `npm run <command>`:
+
+1. `test`: does a normal run of testcafe.
+  - Flags:
+    1. -e
+    2. --disable-page-reloads
+
+2. `test:screenshot`: runs the tests but generates screenshots when a test fails.
+  - Flags:
+    1. -e
+    2. --disable-page-reloads
+    3. -S
+    4. -s screenshots
+
+3. `test:bs`: runs the tests on browserstack, by default runs on an `Samsung Galaxy S8`.
+  - Flags:
+    1. -e
+    2. --disable-page-reloads
+    3. -S
+    4. -s screenshots
+    5. -r spec,xunit:report.xml
+
+4. `test:ci`: runs tests in headless mode for chrome and firefox.
+  - Flags:
+    1. -e
+    2. --disable-page-reloads
+    3. -S
+    4. -s screenshots
+    5. -r spec,xunit:report.xml
+
+5. `test:multiple`: runs tests on multiple browsers at the same time, by default on `chrome, ie, edge and firefox`.
+  - Flags:
+    1. -e
+    2. --disable-page-reloads
+    3. -S
+    4. -s screenshots
